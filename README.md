@@ -26,6 +26,10 @@ This tool is for creating quarter of the product catalog page. Every page consis
 
 ![image](https://user-images.githubusercontent.com/24242044/170026343-726bc5d4-f182-451d-9f8d-a704fc72058b.png)
 
+This is what a catalog page looks like:
+
+![33666](https://user-images.githubusercontent.com/24242044/170033080-1586f793-a23f-4b9d-8ae5-1684fd411eba.jpg)
+
 
 ## Student Card Tool
 
