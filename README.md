@@ -22,7 +22,7 @@ Raseko-logo-vaaka.png | RASEKO's logo for the student card
 
 ## Product Catalog Tool
 
-This tool is for creating quarter of the product catalog page. Every page consist of 4 rectangels showing a product picture, name of the product and the barcode. Tools saves this information into a pdf file. Catalog pages are created with Inkscape application and printed for a catalog stand.
+This tool is for creating quarter of the product catalog page. Every page consist of 4 rectangels showing a product picture, name of the product and the barcode. Tools saves this information into a pdf file. Catalog pages are created with Inkscape application and printed for a catalog stand. This tool is intended to be used with camera stand designed by TeSu students. UI has rule of thrirds view finder to get correctly sized and positioned product pictures. Pictures are rotated 90 degrees clock wise for final catalog page. When the picture is perfect it can be printed to pdf file. These files are merged into catalog pages with Inkscape drawing application.
 
 ![image](https://user-images.githubusercontent.com/24242044/170026343-726bc5d4-f182-451d-9f8d-a704fc72058b.png)
 
