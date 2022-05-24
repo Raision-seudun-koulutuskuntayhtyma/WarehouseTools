@@ -14,6 +14,7 @@ studentCardv2.ui | Qt Designer file for student card tool
 studentCardv2.spec | Build settings for student card tool
 studentPicture.py | Source code for webcamera tool which takes still pictures for the student card
 studentPicture.ui | Qt Designer file for the webcamera tool
+studentPictureSettings.dat |  JSON based settings file for student photo application. Used for camera and folder settings.
 studentPicture.spec | Build settings for student photo taking tool
 code128Bcode | Module for generating barcodes with the Libre barcode 128 font
 Omakuva2.png | A placeholder image for the student card tool
