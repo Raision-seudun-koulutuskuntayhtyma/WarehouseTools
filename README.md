@@ -33,7 +33,7 @@ This is what a catalog page looks like:
 
 ## Student Card Tool
 
-This tools allows printing student cards with photos taken with student photo tool
+This tools allows printing student cards using photos taken with student photo tool.
 
 ![image](https://user-images.githubusercontent.com/24242044/170027259-51607205-f17e-4fa5-9b48-db46a2a03762.png)
 
