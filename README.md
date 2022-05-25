@@ -46,5 +46,6 @@ This is a simple tool for taking student photographs with a webcam. The UI has s
 ## Dependencies
 
 Tools UIs has been made with **QT Designer** so **PyQT5** is needed. You can install it by typing `pip install pyqt5`. Webcam uses **OpenCV** library for imagecapture. For Pyhton environment it can be installed by typing `pip install opencv-python`.
+:warning: Keep pip up to date, because some libraries use latest versions of **pip**. Update it with following command `pip install --upgrade pip`
 
 
