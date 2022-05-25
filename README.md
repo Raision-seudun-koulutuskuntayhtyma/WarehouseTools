@@ -63,7 +63,7 @@ The app needs following files:
 
 Libraries and modules needed:
 
-```Pyhton
+```Python
 # LIBRARIES AND MODULES
 import json # For saving and reading settings in JSON format
 import cv2 # For OpenCV video and picture manipulation for reading Web camera
@@ -81,7 +81,7 @@ App needs only the UI file `studentCardv2.ui`.
 
 Libraries and modules needed:
 
-```Pyhton
+```Python
 # LIBRARIES AND MODULES
 import sys # For accessing system parameters
 import os # For directory and file handling
