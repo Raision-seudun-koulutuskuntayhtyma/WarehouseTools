@@ -22,7 +22,7 @@ Raseko-logo-vaaka.png | RASEKO's logo for the student card
 
 ## Product Catalog Tool
 
-This tool is for creating quarter of the product catalog page. Every page consist of 4 rectangels showing a product picture, name of the product and the barcode. Tools saves this information into a pdf file. Catalog pages are created with Inkscape application and printed for a catalog stand. This tool is intended to be used with camera stand designed by TeSu students. UI has rule of thrirds view finder to get correctly sized and positioned product pictures. Pictures are rotated 90 degrees clock wise for final catalog page. When the picture is perfect it can be printed to pdf file. These files are merged into catalog pages with Inkscape drawing application.
+This tool is for creating quarter of the product catalog page. Every page consist of 4 rectangels showing a product picture, name of the product and the barcode. Tools saves this information into a pdf file. Catalog pages are created with Inkscape application and printed for a catalog stand. This tool is intended to be used with camera stand designed by TeSu students. UI has rule of thrirds view finder to get correctly sized and positioned product pictures. Pictures are rotated 90 degrees clock wise for final catalog page. When the picture is perfect it can be printed to a pdf file. These files are merged into catalog pages with Inkscape drawing application.
 
 Tool is multithreaded application. Video processing is done in a separate thread to avoid frozen UI while reading the video stream from a webcam. Threads are created with `QThread` class from **PyQt5**.
 
