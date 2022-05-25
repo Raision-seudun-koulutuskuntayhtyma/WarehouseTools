@@ -119,3 +119,17 @@ datas=[('code128Bcode.py', '.'), ('productPicture.ui', '.'), ('productPictureSet
 
 ```
 
+Allways add non precompiled resources like logos or placeholder images to `datas` section of the `spec` file.
+
+⚠️ When using QT UI recources which are not precompiled into python file you must copy resources like ui or picture files manually into `dist` folder in the first build of your application. If you create your own modules needeb by the app they must either reside in the `libs` folder of the virtual environment or you must add your own python modules into the `.spec` file to copy them automatically during the build process. Alfter 1st build you can edit the created `.spec` file. When you have a `.spec` file you can build with command `PyInstaller studentPicture.spec` or what ever is your build specification file.
+
+If python console is needed it can be enabled by editing `.spec` file and altering `exe = EXE()` block. Change console option to `console=True`.
+
+⚠️ Windows Defender might claim that there is a trojan in the executable. This is a known false positive. Most of computers in the school have FSecure Safe as malware detection software. It does not give any alerts concerning the executable. Defender users may find this article useful: https://python.plainenglish.io/pyinstaller-exe-false-positive-trojan-virus-resolved-b33842bd3184.
+
+## Installer
+Applications can be distributed with or without an installer. When used without an installer contents of the distribution folder are copied to the other computer. Some of the files are shown in the picture below:
+
+![image](https://user-images.githubusercontent.com/24242044/168031298-51e47538-b4a7-4a97-9837-cc349822a9e7.png)
+
+Distribution can be made with zipped folder containing installation instructions and contents of the distribution folder. Creating an installer is more sophisticated way of delivering the application to a client. Free installer building application is **InstallForge**. You can load it from https://installforge.net/download/. There is a nice tutorial at https://www.pythonguis.com/tutorials/packaging-pyqt5-pyside2-applications-windows-pyinstaller/ about using `PyInstaller` and `InstallForge` It is essential to add instructions for installing **Libre Code 128** font from Goolgle. Font can be found at https://fonts.google.com/specimen/Libre+Barcode+128+Text.
