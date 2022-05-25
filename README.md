@@ -42,3 +42,9 @@ This tools allows printing student cards using photos taken with student photo t
 This is a simple tool for taking student photographs with a webcam. The UI has same settings component as Product Catalog Tool, but it has not been implemented yet.
 
 ![image](https://user-images.githubusercontent.com/24242044/170027658-5979a2aa-4a61-4b5c-af62-13f972f7862c.png)
+
+## Dependencies
+
+Tools UIs has been made with **QT Designer** so **PyQT5** is needed. You can install it by typing `pip install pyqt5`. Webcam uses **OpenCV** library for imagecapture. For Pyhton environment it can be installed by typing `pip install opencv-python`.
+
+
