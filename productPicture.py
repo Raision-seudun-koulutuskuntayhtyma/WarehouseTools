@@ -4,7 +4,7 @@
 # ----------------------
 
 import json # For saving and reading settings in JSON format
-import code128Bcode # DIY Module for creating barcodes with a font
+import code128Bcode # DIY Module for creating barcodes with a Libre code 128 font
 import cv2 # For OpenCV video and picture manipulation
 import sys # For accessing system parameters
 import os # For accessing users profile path
