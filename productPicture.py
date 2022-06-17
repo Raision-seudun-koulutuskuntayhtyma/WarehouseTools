@@ -3,7 +3,9 @@
 # LIBRARIES AND MODULES
 # ----------------------
 
-import json # For saving and reading settings in JSON format
+import json
+
+import numpy # For saving and reading settings in JSON format
 import code128Bcode # DIY Module for creating barcodes with a Libre code 128 font
 import cv2 # For OpenCV video and picture manipulation
 import sys # For accessing system parameters
@@ -23,6 +25,7 @@ class VideoThread(QThread):
     def __init__(self):
         super().__init__()
         self.alive = True # Property for stopping the video
+        self.sharpen = False
 
     # Create signal to change the image field in the UI
     changePixmap = pyqtSignal(QImage)
@@ -48,9 +51,15 @@ class VideoThread(QThread):
             if ret:
                 # Resize and convert video to UI
                 rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # BGR -> RGB
-                height, width, channels = rgbImage.shape # Image size & number of channels
+                if self.sharpen:
+                    sharpeningFilter = numpy.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+                    sharpImage = cv2.filter2D(rgbImage, -1, sharpeningFilter)
+                    image = sharpImage
+                else:
+                    image = rgbImage
+                height, width, channels = image.shape # Image size & number of channels
                 bytesPerLine = channels * width # Calculate how many bytes per video line
-                inQtFormat = QImage(rgbImage.data, width, height, bytesPerLine, QImage.Format_RGB888)
+                inQtFormat = QImage(image.data, width, height, bytesPerLine, QImage.Format_RGB888)
                 videoOut = inQtFormat.scaled(640, 360, Qt.KeepAspectRatio) # Size of picture is 50% of original
                 self.changePixmap.emit(videoOut) # Signal out the video
     
@@ -75,7 +84,7 @@ class App(QtWidgets.QWidget):
         self.settingsFile = open('productPictureSettings.dat', 'r') # Read all settings from the settings file
         self.settings = json.load(self.settingsFile) # Dreate a dict fron JSON data
 
-        #  Empty list for photo list Qlist widet in the UI
+        #  Empty list for photo list Qlist widget in the UI
         self.listItems = [] 
 
         # UI elements (Direct assignment to properties)
@@ -88,6 +97,7 @@ class App(QtWidgets.QWidget):
         self.bigImage = self.catalogPicture # Image for the product catalog
         self.barCode = self.bcLabel # The barcode presentation of the product number
         self.photoList = self.pictureList # List of saved images
+        self.enableSharpen = self.sharpeningCheckBox # Check to sharpen the video
         
         
 
@@ -108,6 +118,8 @@ class App(QtWidgets.QWidget):
         self.camera.valueChanged.connect(self.adjustSettings)
         self.videoWidth.valueChanged.connect(self.adjustSettings)
         self.videoHeight.valueChanged.connect(self.adjustSettings)
+
+        self.enableSharpen.stateChanged.connect(self.setSharpening)
 
         # Set the product pictute folder setting when edited in the UI
         self.picFolder.textEdited.connect(self.adjustSettings)
@@ -155,6 +167,8 @@ class App(QtWidgets.QWidget):
         json.dump(settings, file)
         file.close()
         
+    def setSharpening(self):
+        videoThread.sharpen = self.enableSharpen.isChecked()
 
     # Capture video: started by signal from captureButton
     def capture(self):
