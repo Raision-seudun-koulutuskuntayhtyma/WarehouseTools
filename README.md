@@ -28,6 +28,8 @@ Tool is multithreaded application. Video processing is done in a separate thread
 
 ![image](https://user-images.githubusercontent.com/24242044/170026343-726bc5d4-f182-451d-9f8d-a704fc72058b.png)
 
+> There is a new check box for sharpening the image. It has been added to the UI below video buttons. Missing from the picture above.
+
 This is what a catalog page looks like:
 
 ![33666](https://user-images.githubusercontent.com/24242044/170033080-1586f793-a23f-4b9d-8ae5-1684fd411eba.jpg)
